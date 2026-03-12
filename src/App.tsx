@@ -12,25 +12,24 @@ function App() {
 	
   return (
 		<>
-		
-		<div style={{maxWidth: 700, margin: "40px auto", fontFamily:"sans-serif"}}>
-      <h1>텍스트 줄바꿈 제거 툴</h1>
-			<textarea
-				placeholder={"텍스트를 붙여 넣으세요"}
-				value={input}
-				style={{ width: "100%", marginBottom: 10 }}
-				rows={8}
-				onChange={(e) => setInout(e.target.value)}
-			/>
-			<button onClick={ removeLineBreaks }>줄바꿈 제거</button>
-			
-			<textarea placeholder={"결과"}
-								value={output}
-								readOnly={true}
-								rows={8}
-								style={{ width: "100%", marginBottom: 10 }} />
-			
-    	</div>
+			<div style={{maxWidth: 700, margin: "40px auto", fontFamily:"sans-serif"}}>
+				<h1>텍스트 줄바꿈 제거 툴</h1>
+				<textarea
+					placeholder={"텍스트를 붙여 넣으세요"}
+					value={input}
+					style={{ width: "100%", marginBottom: 10 }}
+					rows={8}
+					onChange={(e) => setInout(e.target.value)}
+				/>
+				<button onClick={ removeLineBreaks }>줄바꿈 제거</button>
+				
+				<textarea placeholder={"결과"}
+									value={output}
+									readOnly={true}
+									rows={8}
+									style={{ width: "100%", marginBottom: 10 }} />
+				
+			</div>
 			
 			<section style={{marginTop: 32 }} >
 				<h2>텍스트 줄바꿈 제거란??</h2>
@@ -40,9 +39,9 @@ function App() {
 				
 				<h2> 이런 경우 사용할 수 있어요</h2>
 				<ul>
-					<li>복사한 문장은 한줄로 붙이고 싶을때</li>
+					<li>복사한 문장은 한줄로 붙이고 싶을 때</li>
 					<li>엑셀이나 문서용 텍스트를 정리할 떄</li>
-					<li>불필요한 줄바꿈을 제거하고 싶을때</li>
+					<li>불필요한 줄바꿈을 제거하고 싶을 때</li>
 				</ul>
 			</section>
 			
