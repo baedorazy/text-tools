@@ -16,7 +16,7 @@ function App() {
 	}
 	
   return (
-		<div className="min-h-screen bg-gray-50">
+		<div className="min-h-screen bg-gray-50 text-black">
 			{/* Header */}
 			<header className="border-b bg-white sticky top-0">
 				<div className="max-w-4xl mx-auto px-6 py-4 flex justify-between">
@@ -58,7 +58,7 @@ function App() {
 				</button>
 			</main>
 			
-			<section className="mt-10 text-gray-700 text-left p-3" >
+			<section className="mt-10 text-gray-700 text-left max-w-3xl mx-auto p-6" >
 				<h3 className="text-lg font-semibold mb-2">
 					텍스트 줄바꿈 제거란?
 				</h3>
