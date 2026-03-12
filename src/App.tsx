@@ -10,43 +10,88 @@ function App() {
 		setOutput(cleaned);
 	}
 	
+	const copyText = async () => {
+		await navigator.clipboard.writeText(output);
+		alert("copied!");
+	}
+	
   return (
-		<>
-			<div style={{maxWidth: 700, margin: "40px auto", fontFamily:"sans-serif"}}>
-				<h1>텍스트 줄바꿈 제거 툴</h1>
+		<div className="min-h-screen bg-gray-50">
+			{/* Header */}
+			<header className="border-b bg-white sticky top-0">
+				<div className="max-w-4xl mx-auto px-6 py-4 flex justify-between">
+					<h1 className="font-semibold text-lg">Text Tools</h1>
+				</div>
+			</header>
+			
+			<main className="max-w-3xl mx-auto p-6">
+				<h1 className={"ext-2xl font-bold mb-2"}>텍스트 줄바꿈 제거</h1>
+				
+				<p className="text-gray-500 mb-6">
+					줄바꿈이 포함된 텍스트를 한 줄로 정리하는 무료 온라인 도구입니다.
+				</p>
+				
 				<textarea
 					placeholder={"텍스트를 붙여 넣으세요"}
 					value={input}
-					style={{ width: "100%", marginBottom: 10 }}
-					rows={8}
+					className="w-full border border-gray-200 rounded-xl p-4 mb-4 focus:outline-none focus:ring-blue-500 text-black"
+					rows={6}
 					onChange={(e) => setInout(e.target.value)}
 				/>
-				<button onClick={ removeLineBreaks }>줄바꿈 제거</button>
+				<button
+					onClick={removeLineBreaks}
+					className="bg-blue-600 text-white hover:bg-blue-700 px-5 py-2 rounded-xl"
+				> 줄바꿈 제거
+				</button>
 				
-				<textarea placeholder={"결과"}
-									value={output}
-									readOnly={true}
-									rows={8}
-									style={{ width: "100%", marginBottom: 10 }} />
+				{/* output */}
+				<textarea
+					className="w-full border border-gray-200 rounded-xl p-4 mt-4  text-black"
+					rows={6}
+					value={output}
+					readOnly
+					placeholder="결과가 여기에 표시됩니다"
+				/>
 				
-			</div>
+				<button onClick={copyText} className={"mt-3 bg-blue-600 text-white hover:bg-blue-700 px-5 py-2 rounded-xl"}
+				>결과 복사
+				</button>
+			</main>
 			
-			<section style={{marginTop: 32 }} >
-				<h2>텍스트 줄바꿈 제거란??</h2>
-				<p> 이 독는 줄바꿈이 포함된 텍스트를 공백으로 바꿔 한 줄 문장으로 정리해줍니다.
-					문서 정리, 게시글 작성, 데이터 가공 시 유리하게 사용할 수 있습니다.
+			<section className="mt-10 text-gray-700 text-left p-3" >
+				<h3 className="text-lg font-semibold mb-2">
+					텍스트 줄바꿈 제거란?
+				</h3>
+				<p className="mb-4 text-sm text-gray-500">
+					줄바꿈 제거는 여러 줄로 나뉘어 있는 텍스트를 한 줄로 정리하는 작업입니다. <br/>
+					웹페이지나 문서에서 복사한 텍스트에는 불필요한 줄바꿈이 포함되는 경우가 많습니다. <br/>
+					이 도구를 사용하면 줄바꿈 문자를 공백으로 바꿔 한 줄 문장으로 쉽게 정리할 수 있습니다. <br/>
 				</p>
 				
-				<h2> 이런 경우 사용할 수 있어요</h2>
-				<ul>
-					<li>복사한 문장은 한줄로 붙이고 싶을 때</li>
-					<li>엑셀이나 문서용 텍스트를 정리할 떄</li>
-					<li>불필요한 줄바꿈을 제거하고 싶을 때</li>
+				<h3 className="text-lg font-semibold mb-2">
+					언제 사용하나요?
+				</h3>
+				
+				<ul className="mb-4 text-sm text-gray-500 text-left">
+					<li>1. 웹페이지에서 복사한 텍스트를 정리할 때</li>
+					<li>2. 문서 내용을 한 줄 문장으로 만들 때</li>
+					<li>3. 데이터나 게시글을 정리할 때</li>
 				</ul>
-			</section>
+				
+				<h3 className="text-lg font-semibold mb-2">
+					사용 방법
+				</h3>
+				
+				<ol className=" mb-4 text-sm text-gray-500 text-left">
+					<li>1. 텍스트를 입력창에 붙여넣습니다.</li>
+					<li>2. 줄바꿈 제거 버튼을 클릭합니다.</li>
+					<li>3. 결과를 복사하여 사용합니다.</li>
+				</ol>
 			
-		</>
-  )
+			</section>
+		
+		</div>
+	)
 }
 
 export default App
