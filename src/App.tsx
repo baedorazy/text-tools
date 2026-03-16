@@ -4,10 +4,12 @@ import './App.css'
 function App() {
   const [input, setInout] = useState("");
 	const [output, setOutput] = useState("");
+	const [countTxt, setCountTxt] = useState(0);
 	
 	const removeLineBreaks = () => {
-		const cleaned = input.replace(/\n/g, " ");
+		const cleaned = input.trim().replace(/\n{2,}/g, '\n');
 		setOutput(cleaned);
+		setCountTxt(cleaned.length);
 	}
 	
 	const copyText = async () => {
@@ -15,26 +17,32 @@ function App() {
 		alert("copied!");
 	}
 	
+	const resetBtn = () => {
+		setInout("");
+		setOutput("");
+		setCountTxt(0);
+	}
+	
   return (
 		<div className="min-h-screen bg-gray-50 text-black">
 			{/* Header */}
-			<header className="border-b bg-white sticky top-0">
+			<header className="border-b bg-white sticky top-0 panel">
 				<div className="max-w-4xl mx-auto px-6 py-4 flex justify-between">
-					<h1 className="font-semibold text-lg">Text Tools</h1>
+					<h1 className="font-semibold text-2xl">Text Tools</h1>
 				</div>
 			</header>
 			
 			<main className="max-w-3xl mx-auto p-6">
-				<h1 className={"ext-2xl font-bold mb-2"}>텍스트 줄바꿈 제거</h1>
+				<h1 className={"text-2xl font-bold mb-2"}>텍스트 줄바꿈 제거</h1>
 				
 				<p className="text-gray-500 mb-6">
-					줄바꿈이 포함된 텍스트를 한 줄로 정리하는 무료 온라인 도구입니다.
+					한줄 이상 줄바꿈 글을 정리하는 무료 온라인 도구입니다.
 				</p>
 				
 				<textarea
 					placeholder={"텍스트를 붙여 넣으세요"}
 					value={input}
-					className="w-full border border-gray-200 rounded-xl p-4 mb-4 focus:outline-none focus:ring-blue-500 text-black"
+					className="w-full border border-gray-200 rounded-xl p-4 mb-4 focus:outline-none focus:ring-blue-500 text-black bg-white"
 					rows={6}
 					onChange={(e) => setInout(e.target.value)}
 				/>
@@ -44,23 +52,32 @@ function App() {
 				> 줄바꿈 제거
 				</button>
 				
+				<hr className={"my-6 border-gray-300"}/>
 				{/* output */}
 				<textarea
-					className="w-full border border-gray-200 rounded-xl p-4 mt-4  text-black"
+					className="w-full border border-gray-200 rounded-xl p-4 mt-4  text-black bg-white"
 					rows={6}
 					value={output}
 					readOnly
 					placeholder="결과가 여기에 표시됩니다"
 				/>
 				
-				<button onClick={copyText} className={"mt-3 bg-blue-600 text-white hover:bg-blue-700 px-5 py-2 rounded-xl"}
-				>결과 복사
-				</button>
+				<div className={"flex flex-wrap justify-between mt-3"}>
+					<div className={"ml-0"}>
+						<button onClick={copyText} className={" bg-blue-600 text-white hover:bg-blue-700 px-5 py-2 rounded-xl"}
+						>결과 복사
+						</button> &nbsp;
+						<button onClick={resetBtn} className={" bg-red-600 text-white hover:bg-red-700 px-5 py-2 rounded-xl"}
+						>내용 삭제
+						</button>
+					</div>
+					<span className={"mr-0 text-gray-700 text-sm leading-[40px]"}>텍스트 숫자: { countTxt } </span>
+				</div>
 			</main>
 			
-			<section className="mt-10 text-gray-700 text-left max-w-3xl mx-auto p-6" >
+			<section className="mt-10 text-gray-700 text-left max-w-3xl mx-auto p-6">
 				<h3 className="text-lg font-semibold mb-2">
-					텍스트 줄바꿈 제거란?
+				텍스트 줄바꿈 제거란?
 				</h3>
 				<p className="mb-4 text-sm text-gray-500">
 					줄바꿈 제거는 여러 줄로 나뉘어 있는 텍스트를 한 줄로 정리하는 작업입니다. <br/>
