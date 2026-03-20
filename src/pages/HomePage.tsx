@@ -40,8 +40,10 @@ function ToolCard({ tool, index }: { tool: typeof TOOLS[0]; index: number }) {
           {tool.badge}
         </span>
 			)}
-			<div className="card-icon-wrap">
-				<Icon d={tool.icon} size={23} stroke={tool.color} />
+			<div className={"text-center !mx-auto"}>
+				<div className="card-icon-wrap ">
+					<Icon d={tool.icon} size={23} stroke={tool.color} />
+				</div>
 			</div>
 			<div>
 				<div className="card-name">{tool.name}</div>
@@ -173,7 +175,7 @@ function DemoStrip() {
 	};
 	
 	const MODES: { value: DemoMode; label: string }[] = [
-		{ value: 'single',     label: '연속→1개' },
+		{ value: 'single',     label: '연속 줄바꿈 → 1개' },
 		{ value: 'remove-all', label: '전체 제거' },
 		{ value: 'to-space',   label: '공백으로' },
 		{ value: 'normalize',  label: '3+→2개' },
@@ -187,11 +189,11 @@ function DemoStrip() {
             <Icon d="M4 6h16M4 12h10M4 18h7M19 14v6M16 17l3 3 3-3" size={15} stroke="var(--red)" />
             줄바꿈 정리 — 바로 사용해보기
           </span>
-					<span className="live-badge">실시간</span>
+					<span className="live-badge">실시간 변환</span>
 				</div>
-				<p className="demo-sub">텍스트를 붙여넣으면 즉시 변환됩니다</p>
+				<p className="demo-sub pt-2">텍스트를 붙여넣으면 즉시 변환됩니다</p>
 				
-				<div className="demo-opts">
+				<div className="demo-opts !mb-4">
 					{MODES.map(m => (
 						<button
 							key={m.value}
@@ -203,7 +205,7 @@ function DemoStrip() {
 					))}
 				</div>
 				
-				<div className="demo-cols">
+				<div className="demo-cols ">
 					<div>
 						<p className="box-label">입력</p>
 						<textarea
