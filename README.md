@@ -32,3 +32,32 @@
 ├── pages/               # 각 도구별 페이지 구성
 ├── public/              # 이미지 및 에셋
 └── styles/              # Tailwind CSS 설정 및 글로벌 스타일
+
+
+
+## 🛠️ 설치 및 실행 방법
+로컬 환경에서 프로젝트를 실행하려면 아래 명령어를 입력하세요.
+
+저장소 클론
+```
+Bash
+git clone [https://github.com/baedorazy/text-tools.git](https://github.com/baedorazy/text-tools.git)
+의존성 설치
+```
+Bash
+npm install
+# 또는
+yarn install
+로컬 서버 실행
+
+```
+Bash
+npm run dev
+# 또는
+yarn dev
+브라우저에서 http://localhost:3000을 열어 확인하세요.
+
+⚖️ 라이선스 및 정책
+License: MIT License
+
+Privacy Policy: 본 서비스는 이용자의 텍스트 데이터를 서버에 저장하지 않으며 브라우저 내에서 안전하게 처리합니다.
