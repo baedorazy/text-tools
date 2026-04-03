@@ -1,73 +1,34 @@
-# React + TypeScript + Vite
+# 🛠️ Text Tools Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+웹에서 간편하게 사용할 수 있는 **텍스트 편집 및 분석 도구 모음**입니다.  
+복잡한 설치 없이 브라우저에서 즉시 텍스트 글자 수 세기, 대소문자 변환 등의 기능을 이용할 수 있습니다.
 
-Currently, two official plugins are available:
+👉 **라이브 데모:** [https://text-tools-six.vercel.app/](https://text-tools-six.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ 주요 기능
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- **글자 수 세기 (Character Counter):** 공백 포함/제외 글자 수를 실시간으로 계산합니다.
+- **대소문자 변환 (Case Converter):** 영문 텍스트를 대문자, 소문자로 즉시 변환합니다.
+- **텍스트 정화 (Clean Up):** 불필요한 공백 제거 등 텍스트를 깔끔하게 정리합니다. (추가 예정)
+- **반응형 디자인:** 모바일과 데스크톱 어디서든 최적화된 UI를 제공합니다.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 기술 스택
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Frontend:** Next.js (또는 사용하신 프레임워크), Tailwind CSS
+- **Deployment:** Vercel
+- **AI Assisted:** 본 프로젝트는 AI(Claude)와의 협업을 통해 제작되었습니다.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📂 프로젝트 구조
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```text
+.
+├── components/          # 재사용 가능한 UI 컴포넌트
+├── pages/               # 각 도구별 페이지 구성
+├── public/              # 이미지 및 에셋
+└── styles/              # Tailwind CSS 설정 및 글로벌 스타일
