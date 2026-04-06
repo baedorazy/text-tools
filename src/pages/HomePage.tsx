@@ -178,7 +178,7 @@ function DemoStrip() {
 		{ value: 'single',     label: '연속 줄바꿈 → 1개' },
 		{ value: 'remove-all', label: '전체 제거' },
 		{ value: 'to-space',   label: '공백으로' },
-		{ value: 'normalize',  label: '3+→2개' },
+		{ value: 'normalize',  label: '줄바꿈 2줄이상 한줄' },
 	];
 	
 	return (
@@ -212,7 +212,7 @@ function DemoStrip() {
 							className="editor-ta"
 							value={input}
 							onChange={e => setInput(e.target.value)}
-							placeholder={'여기에 텍스트를 붙여넣으세요...\n\n\n줄바꿈이 여러 번\n\n반복될 때\n\n\n한 번에 정리됩니다.'}
+							placeholder={'여기에 텍스트를 붙여넣으세요... \n\n\nbefore \n줄바꿈이 여러 번\n\n반복될 때\n\n\n한 번에 정리됩니다.'}
 							style={{ height: 400, '--focus-color': 'var(--red)' } as React.CSSProperties}
 						/>
 					</div>
@@ -222,7 +222,7 @@ function DemoStrip() {
 							className={"editor-ta output "}
 							value={output}
 							readOnly
-							placeholder="변환된 결과가 여기에 표시됩니다..."
+							placeholder={'변환된 결과가 여기에 표시됩니다... \n\n\nafter\n줄바꿈이 여러 번\n반복될때 \n한 번에 정리됩니다.  '}
 							style={{ height: 400 }}
 						/>
 					</div>
@@ -231,7 +231,7 @@ function DemoStrip() {
 				<div className="demo-foot">
 					<div className="demo-stats">
 						<span>입력 <strong>{input.length}</strong>자</span>
-						<span>출력 <strong>{output.length}</strong>자</span>
+						<span>글자수 <strong>{output.length}</strong>자</span>
 						<span>처리 <strong>{removed}</strong>개</span>
 					</div>
 					<button className={`copy-btn ${copied ? 'ok' : ''}`} onClick={copy}>

@@ -363,4 +363,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); -web
     .hero { padding: 40px 16px 36px; }
     .features-grid { grid-template-columns: 1fr; }
     .page-title { font-size: 19px; }
+    .all-tools-btn {
+        padding: 7px 10px;
+    }
 }

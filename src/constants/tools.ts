@@ -113,4 +113,16 @@ export const TOOLS: Tool[] = [
     path: '/json-csv',
     keywords: 'JSON 변환, CSV 변환',
   },
+	{
+		id: 'json-csv',
+		name: 'JSON formatter',
+		desc: '정리안된 json 데이터 정리',
+		icon: 'M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6',
+		color: '#22C55E',
+		bg: '#F0FDF4',
+		shadow: '#22C55E22',
+		path: '/json-csv',
+		keywords: 'json formatter',
+	},
+	
 ];
