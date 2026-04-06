@@ -22,9 +22,9 @@ function App() {
 	
 	return (
 		<div className="app-root">
-			<Header dark={dark} onToggleDark={() => setDark(d => !d)} />
+			<Header dark={dark} onToggleDark={() => setDark(d => !d)}/>
 			<main className="app-main">
-				<Outlet />
+				<Outlet/>
 			</main>
 		</div>
 	);

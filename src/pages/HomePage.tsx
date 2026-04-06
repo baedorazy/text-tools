@@ -17,7 +17,7 @@
 // 	)
 // }
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import { TOOLS } from '../constants/tools';
 import { Icon } from '../components/ToolLayout';
 
@@ -141,7 +141,12 @@ export default function HomePage() {
 			
 			<footer className="site-footer">
 				<p>TextTools · 무료 텍스트 정리 도구</p>
-				<p>React + TypeScript · Tailwind CSS · Vercel · 서버 전송 없음</p>
+				<p>React + TypeScript · Tailwind CSS · Vercel</p>
+				<p className={"mt-2"}>
+					<a href="/privacy.html" className={"text-gray text-sm"}>개인정보 처리방침</a>
+					<span> | </span>
+					<a href="/terms.html"  className={"text-gray text-sm"}>이용약관</a>
+				</p>
 			</footer>
 		</div>
 	);
